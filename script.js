@@ -129,14 +129,15 @@ function modelTest(data_obj, floatValue) {
     let change = changeStr * 1
     let finalValues = [];
     let sum = 0
+    let sumLastRow = 0;
     for (let i = 0; i < nrow; i++) {
         prices.push(1 * data_obj[i].Last);
         finalValues.push(- 1 * prices[i] * table[table.length - 1][i + 1] * change / 100);
-
+        sumLastRow += table[table.length - 1][i + 1];
         // Calculate sum
         sum += finalValues[i];
     }
-    console.log(sum)
+    //console.log(sumLastRow)
 
     // Round sum
     let displayedSum = Math.round(sum);
@@ -145,9 +146,13 @@ function modelTest(data_obj, floatValue) {
     const nFormat = new Intl.NumberFormat();
     displayedSum = nFormat.format(displayedSum);
 
+    let displayedSum1 = Math.round(sumLastRow);
+    displayedSum1 = nFormat.format(displayedSum1);
+
     // Display sum
     let totalText = document.getElementById("total");
-    totalText.innerHTML = `<span style="color:#F03222; font-weight: 900;">Total:</span><br>$ ${displayedSum}`
+    totalText.innerHTML = `<span style="color:#F03222; font-weight: 900;">Total1:</span><br>$ ${displayedSum1}<br>
+                           <span style="color:#F03222; font-weight: 900;">Total2:</span><br>$ ${displayedSum}`
     
   }
 
