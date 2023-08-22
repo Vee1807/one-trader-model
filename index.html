@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Trader Model</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Garamond">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form enctype="multipart/form-data">
+        <input id="upload" type=file name="files[]">
+    </form>
+    <form id="query-container">
+        <h2 id="query-name">Float:</h2>
+        <input type="number" id="float-input" autocomplete="off" placeholder="float" required>
+        <button type="submit" id="submit">Calculate</button>
+    </form>
+    <div id="table-container">
+
+    </div>
+</body>
