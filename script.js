@@ -42,9 +42,8 @@ let ExcelToJSON = function() {
       };
   
       reader.readAsBinaryString(file);
-    };
-    
-  };
+    };    
+};
 
 
 // Source - https://stackoverflow.com/questions/8238407/how-to-parse-excel-xls-file-in-javascript-html5
@@ -138,6 +137,18 @@ function modelTest(data_obj, floatValue) {
         sum += finalValues[i];
     }
     console.log(sum)
+
+    // Round sum
+    let displayedSum = Math.round(sum);
+
+    // Format sum to a readable string
+    const nFormat = new Intl.NumberFormat();
+    displayedSum = nFormat.format(displayedSum);
+
+    // Display sum
+    let totalText = document.getElementById("total");
+    totalText.innerHTML = `<span style="color:#F03222; font-weight: 900;">Total:</span><br>$ ${displayedSum}`
+    
   }
 
 

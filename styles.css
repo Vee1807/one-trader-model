@@ -1,5 +1,6 @@
 * {
     font-family: Garamond;
+    box-sizing: border-box;
 }
 
 :root {
@@ -13,16 +14,52 @@ html {
     
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(240, 50, 34, 0.7);
+    box-shadow: 0 0 0.1rem rgb(7, 7, 7);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+
+
+.container {
+    margin: 1.2rem;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.note {
+    background-color: rgba(238, 255, 0, 0.5);
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    width: fit-content;
+}
+
+#query-container {
+    margin: 1.2rem;
+}
+
 #submit {
     background-color: var(--accent-color);
     color: var(--bg-color-dark);
-    border: 0.2rem solid var(--accent-color);
-    padding: 0.5rem 0.6rem;
+    border: 0.15rem solid var(--accent-color);
+    padding: 0.4rem 0.6rem;
     font-weight: 900;
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
     font-size: 1.2rem;
     cursor: pointer;
     transition: ease 0.2s;
+    margin: 1rem;
 }
 
 #submit:hover {
@@ -32,14 +69,14 @@ html {
 
 #float-input {
     font-size: 1.2rem;
-    padding: 0.5rem 0.6rem;
-    border: 0.1rem solid white;
+    padding: 0.4rem 0.6rem;
+    border: 0.15rem solid white;
     border-radius: 0.5rem;
 }
 
 #float-input:focus {
     outline: none !important;
-    border: 0.1rem solid var(--accent-color);
+    border: 0.15rem solid var(--accent-color);
 }
 
 
@@ -60,10 +97,25 @@ html {
     border: 0.1rem solid var(--accent-color);
     cursor: pointer;
     margin-right: 1rem;
+    transition: ease 0.2s;
 }
 
 
 ::file-selector-button:hover {
     background-color: var(--accent-color);
     color: var(--bg-color-dark);
+}
+
+#upload {
+    font-size: 1.1rem;
+}
+
+.output {
+    padding: 1.2rem;
+    margin-top: 3rem;
+    border-top: 0.05rem solid white;
+}
+
+#total {
+    line-height: 3.5rem;
 }
